@@ -9,7 +9,14 @@ flipperListSecondLine = [RIGHT, LEFT, RIGHT]
 
 flipperListThirdLine = [RIGHT, LEFT, RIGHT]
 
-while column == 1 or column == 2 or column == 3 or column == 4:
+def isAvalidColumn(column):
+    if column == 1 or column == 2 or column == 3 or column == 4:
+        return True
+    else:
+        return False
+
+
+while isAvalidColumn(column):
     column = int(input('choose a number for start 1, 2, 3, 4 \n'))
     if column == 1:
         if flipperList[0] == RIGHT:
@@ -54,7 +61,7 @@ while column == 1 or column == 2 or column == 3 or column == 4:
         elif flipperList[2] == LEFT:
             column = 3
             flipperList[2] = RIGHT
-    if column == 1 or column == 2 or column == 3 or column == 4:
+    if isAvalidColumn(column):
         print(f'from column: {column} ')
 
     if column == 1:
@@ -119,5 +126,6 @@ while column == 1 or column == 2 or column == 3 or column == 4:
         elif flipperListThirdLine[2] == LEFT:
             column = 3
             flipperListThirdLine[2] = RIGHT
-    if column == 1 or column == 2 or column == 3 or column == 4:
+    if isAvalidColumn(column):
         print(f'ending column: {column}')
+
